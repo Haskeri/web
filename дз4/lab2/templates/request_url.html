@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}URL параметры{% endblock %}
+
+{% block content %}
+<h1 class="mb-3">Параметры URL</h1>
+{% if params %}
+<table class="table table-striped">
+    <thead>
+    <tr><th>Параметр</th><th>Значение</th></tr>
+    </thead>
+    <tbody>
+    {% for key, value in params %}
+    <tr><td>{{ key }}</td><td>{{ value }}</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<div class="alert alert-secondary">Параметры URL отсутствуют.</div>
+{% endif %}
+{% endblock %}

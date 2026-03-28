@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Lab2 Flask{% endblock %}
+
+{% block content %}
+<h1 class="mb-3">Лабораторная работа №2</h1>
+<p class="lead">Приложение показывает данные запроса и проверяет номер телефона.</p>
+<ul>
+    <li><a href="{{ url_for('request_url', sample='123', mode='test') }}">Параметры URL</a></li>
+    <li><a href="{{ url_for('request_headers') }}">Заголовки запроса</a></li>
+    <li><a href="{{ url_for('request_cookies') }}">Cookie запроса</a></li>
+    <li><a href="{{ url_for('request_form') }}">Форма авторизации</a></li>
+    <li><a href="{{ url_for('phone') }}">Проверка номера телефона</a></li>
+</ul>
+{% endblock %}

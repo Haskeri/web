@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Cookie{% endblock %}
+
+{% block content %}
+<h1 class="mb-3">Cookie запроса</h1>
+<p><a class="btn btn-outline-primary btn-sm" href="{{ url_for('set_cookie') }}">Установить demo cookie</a></p>
+{% if cookies %}
+<table class="table table-striped">
+    <thead>
+    <tr><th>Cookie</th><th>Значение</th></tr>
+    </thead>
+    <tbody>
+    {% for key, value in cookies %}
+    <tr><td>{{ key }}</td><td>{{ value }}</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<div class="alert alert-secondary">Cookie отсутствуют.</div>
+{% endif %}
+{% endblock %}
